@@ -42,7 +42,22 @@
 
 <button></button>
 <script>
+const divs = document.querySelectorAll('div');
 
+function logText(e){
+  console.log(this.classList.value);
+  //stopPropagation will stop bubbling! 
+  //It will only print the one you clicked
+  //e.stopPropagation();
+}
+
+
+divs.forEach(div => div.addEventListener('click', logText, {
+  //Capture false is default. Will run on bubble up (3,2,1)
+  //If we set to true it will run bubble down (1,2,3)
+  capture: false,
+  once: true
+}));
 </script>
 </body>
 </html>
