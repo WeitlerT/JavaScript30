@@ -56,6 +56,9 @@ divs.forEach(div => div.addEventListener('click', logText, {
   //Capture false is default. Will run on bubble up (3,2,1)
   //If we set to true it will run bubble down (1,2,3)
   capture: false,
+  //Once will turn off the event listener after its run once
+  //This can be useful for buttons you dont want users to press
+  //multiple times
   once: true
 }));
 </script>
